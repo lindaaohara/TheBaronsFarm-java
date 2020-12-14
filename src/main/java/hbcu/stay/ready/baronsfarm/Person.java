@@ -5,14 +5,9 @@ public abstract class Person implements Eater, NoiseMaker{
 
     public abstract String setName();
 
-    public abstract String getName(){
-        return name;
-    }
+    public abstract String getName();
 
-    @Override
-    public void eat(){
 
-    }
 
     @Override
     public String makeNoise(){

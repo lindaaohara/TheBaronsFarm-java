@@ -2,6 +2,7 @@ package hbcu.stay.ready.baronsfarm;
 
 import hbcu.stay.ready.baronsfarm.animals.Horse;
 import hbcu.stay.ready.baronsfarm.crops.*;
+import hbcu.stay.ready.baronsfarm.farm.Farm;
 import hbcu.stay.ready.baronsfarm.farm.Stable;
 import hbcu.stay.ready.baronsfarm.food.Corn;
 import hbcu.stay.ready.baronsfarm.food.Egg;
@@ -13,52 +14,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestSunday {
-    private Farmer baron;
-    private Farmer baroness;
-    private Stable stable1;
-    private Stable stable2;
-    private Stable stable3;
+    Farm farm;
 
     @Before
-    public void setUpFarm(){
-        baron = new Farmer();
-        baroness = new Farmer();
-        stable1 = new Stable();
-        stable2 = new Stable();
-        stable3 = new Stable();
-        for(int i = 0; i < 10; i++){
-            Horse horse = new Horse("" + i);
-            if(i < 4){
-                stable1.addHorse();
-            } else if(i >= 4 && i < 7){
-                stable2.addHorse();
-            } else{
-                stable3.addHorse();
-            }
-        }
-        Field field = new Field();
-        ArrayList<CropRow> cropRowArrayList=new ArrayList<>();
-        CropRow row1 = new CropRow(new CornStalk());
-        cropRowArrayList.add(row1);
-        CropRow row2 = new CropRow(new TomatoPlant());
-        cropRowArrayList.add(row2);
-        CropRow row3 = new CropRow(new Beans());
-        cropRowArrayList.add(row3);
-        CropRow row4 = new CropRow(new TomatoPlant());
-        cropRowArrayList.add(row4);
-        CropRow row5 = new CropRow(new TomatoPlant());
-        cropRowArrayList.add(row5);
+    public void testFarmSetup(){
+         farm = Farm.getInstance();
     }
 
 
-
-
     @Test
-    public void testRideHorse(){
+    public void testRideAndFeedHorses(){
         //Given
-        List<Horse> stable1List = stable1.getHorseList();
-        List<Horse> stable2List = stable2.getHorseList();
-        List<Horse> stable3List = stable3.getHorseList();
+        Farmer baron = farm.getBaron();
+        Farmer baroness = farm.getBaroness();
+        ArrayList<Stable>stables = farm.getStables();
+
+        List<Horse> stable1List = stables.get(0).getHorseList();
+        List<Horse> stable2List = stables.get(1).getHorseList();
+        List<Horse> stable3List = stables.get(2).getHorseList();
+
 
 
         for (int i = 0; i < stable1List.size(); i++){
@@ -97,9 +71,16 @@ public class TestSunday {
                 stable3List.get(i).eat(new Corn(3));
             }
         }
+        //Then
+        int expected = 10;
+        int actual = stables.size();
     }
     @Test
     public void testBreakfast(){
+        //Given
+        Farmer baron = farm.getBaron();
+        Farmer baroness = farm.getBaroness();
+
         //When
         baron.eat(new Corn(1));
         baron.eat(new Tomato(2));

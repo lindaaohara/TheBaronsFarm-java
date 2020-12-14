@@ -1,43 +1,48 @@
 package hbcu.stay.ready.baronsfarm;
 
 import hbcu.stay.ready.baronsfarm.crops.Crop;
+import hbcu.stay.ready.baronsfarm.food.Edible;
 
-public class Farmer extends Person implements Eater, Pilot, Rideable, Botanist{
-    Farmer farmer = new Farmer;
+public class Farmer extends Person implements Eater, Rideable, Botanist{
 
-    private String setName(){
-        Farmer baron = new Farmer;
 
+    @Override
+    public String setName() {
+        return null;
     }
 
     @Override
-    public void eat(){
-
+    public String getName() {
+        return null;
     }
 
+
+
+
     @Override
-    public void mount(Farmer){
+    public void mount(Farmer farmer) {
 
     }
 
     @Override
     public String dismount(){
-
+        return null;
     }
 
-    @Override
-    public void fly(Pilot){
 
-    }
 
     @Override
     public void plant(Crop crop){
 
     }
 
-    @Override
+
     public void fertilize(){
 
     }
 
+    @Override
+    public void eat(Edible food) {
+
+    }
 }

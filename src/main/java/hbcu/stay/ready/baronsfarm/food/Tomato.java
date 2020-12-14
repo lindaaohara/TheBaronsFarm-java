@@ -7,5 +7,5 @@ public class Tomato extends Edible{
         public Tomato(int tomatoCount){
             this.tomatoCount = tomatoCount;
         }
-    }
+
 }

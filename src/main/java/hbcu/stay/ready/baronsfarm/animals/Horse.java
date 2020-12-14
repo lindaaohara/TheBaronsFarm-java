@@ -1,31 +1,29 @@
 package hbcu.stay.ready.baronsfarm.animals;
 
+import hbcu.stay.ready.baronsfarm.Farmer;
 import hbcu.stay.ready.baronsfarm.Rideable;
 import hbcu.stay.ready.baronsfarm.animals.Animal;
+import hbcu.stay.ready.baronsfarm.food.Edible;
 
-public class Horse extends Animal implements Rideable {
-
-    public Horse(String name){
-        super(name);
-    }
-
-    @Override
-    public String setName() {
-        return name;
-    }
+public class Horse implements Animal, Rideable {
 
     @Override
     public String makeNoise() {
-        return null;
+        return "Hee Haw";
     }
 
-    @Override
-    public void mount(String name) {
+      @Override
+    public void mount(Farmer farmer) {
 
     }
 
     @Override
     public String dismount() {
         return null;
+    }
+
+    @Override
+    public void eat(Edible food) {
+
     }
 }

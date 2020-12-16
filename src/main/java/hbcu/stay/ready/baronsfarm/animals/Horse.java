@@ -23,7 +23,7 @@ public class Horse implements Animal, Rideable {
     }
 
     @Override
-    public void eat(Edible food) {
+    public void eat(Edible food, int count) {
 
     }
 }

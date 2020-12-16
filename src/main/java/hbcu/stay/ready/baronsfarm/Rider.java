@@ -5,8 +5,8 @@ import hbcu.stay.ready.baronsfarm.food.Edible;
 public class Rider extends Person implements Rideable{
 
     @Override
-    public String setName() {
-        return null;
+    public void setName(String name) {
+
     }
 
     @Override
@@ -15,7 +15,7 @@ public class Rider extends Person implements Rideable{
     }
 
     @Override
-    public void eat(Edible food) {
+    public void eat(Edible food, int count) {
 
     }
 

@@ -38,8 +38,8 @@ public class Farm {
     private Farm() {
         chickenCoops = new ArrayList<>();
         stables = new ArrayList<>();
-        Farmer baron = new Farmer();
-        Farmer baroness = new Farmer();
+        baron = new Farmer();
+        baroness = new Farmer();
 
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();

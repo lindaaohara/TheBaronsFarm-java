@@ -3,7 +3,7 @@ package hbcu.stay.ready.baronsfarm;
 public abstract class Person implements Eater, NoiseMaker{
     private String name;
 
-    public abstract String setName();
+    public abstract void setName(String name);
 
     public abstract String getName();
 

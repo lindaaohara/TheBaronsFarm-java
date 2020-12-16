@@ -4,8 +4,8 @@ public class Egg extends Edible{
 
     int eggCount;
 
-    public Egg(int eggCount){
-        this.eggCount = eggCount;
+    public Egg(){
+
     }
 }
 

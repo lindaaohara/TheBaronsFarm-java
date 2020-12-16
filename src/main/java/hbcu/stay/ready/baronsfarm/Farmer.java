@@ -4,19 +4,20 @@ import hbcu.stay.ready.baronsfarm.crops.Crop;
 import hbcu.stay.ready.baronsfarm.food.Edible;
 
 public class Farmer extends Person implements Eater, Rideable, Botanist{
+    int totalFoodCount;
+    int count;
+    String name;
 
 
     @Override
-    public String setName() {
-        return null;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
-
-
 
 
     @Override
@@ -42,7 +43,10 @@ public class Farmer extends Person implements Eater, Rideable, Botanist{
     }
 
     @Override
-    public void eat(Edible food) {
-
+    public void eat(Edible food,int count) {
+        totalFoodCount += count;
+    }
+    public int getTotalFoodCount(){
+        return totalFoodCount;
     }
 }
